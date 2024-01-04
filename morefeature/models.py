@@ -1,6 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
-from django.forms import TextInput, Textarea
+from django.forms import TextInput, Textarea,ClearableFileInput
 from django.forms import ModelForm
 
 # Create your models here.
@@ -64,6 +64,7 @@ class ContactMessage(models.Model):
     phone_no  = models.CharField(blank=True, max_length=50)
     email = models.EmailField(blank=True,max_length=50 )
     subject = models.CharField(blank=True, max_length=255)
+    file = models.FileField(blank=True,)
     message = models.TextField(blank=True, max_length=550 )
     status = models.CharField(max_length=10,choices=STATUS,default='New')
     is_active       =   models.BooleanField(default=True)
@@ -79,13 +80,15 @@ class ContactMessage(models.Model):
 class ContactForm(ModelForm):
     class Meta:
         model = ContactMessage
-        fields = ['name','phone_no','email','subject','message']
+        fields = ['name','phone_no','email','subject','file','message']
         widgets={
             'name':TextInput(attrs={'class':"form-control", 'id':"cname", 'placeholder':"Name *", }),
             'email':TextInput(attrs={'class':"form-control" ,'id':"cemail" ,'placeholder':"Email *" }),
             'phone_no':TextInput(attrs={'name':"phone_no", 'class':"form-control" ,'id':"cphone", 'placeholder':"Phone"}),
             'subject':TextInput(attrs={ 'name':"subject", 'class':"form-control", 'id':"csubject" ,'placeholder':"Subject"}),
+            'file' : ClearableFileInput(attrs={ 'name':"files", 'class':"form-control", 'id':"cfiles" }),
             'message':Textarea(attrs={'class':"form-control", 'name':"message" ,'cols':"30" ,'rows':"4", 'id':"cmessage"  ,'placeholder':"Message *"}),
+
         }
 
 

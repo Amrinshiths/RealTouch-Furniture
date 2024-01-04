@@ -25,7 +25,7 @@ class ClientBrandAdmin(admin.ModelAdmin):
 
 class ContactAdmin(admin.ModelAdmin):
         list_display = ['name','subject','modified_date','status' ]
-        readonly_fields=('name','subject','email','message','phone_no')
+        readonly_fields=('name','subject','email','message','phone_no','file')
         list_filter=['status']                
 admin.site.register(ContactMessage ,ContactAdmin)
 class customizeAdmin(admin.ModelAdmin):

@@ -28,6 +28,8 @@ urlpatterns = [
     path('',include('morefeature.urls')),
     path('',include('account.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('',include('order.urls')),
+
     # path('category/<uuid:id>/',CategoryProduct,name='category-detail')
 
 ]

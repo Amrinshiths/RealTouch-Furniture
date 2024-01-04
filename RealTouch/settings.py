@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'ckeditor',
     'account',
+    'order',
+    
  
     
     

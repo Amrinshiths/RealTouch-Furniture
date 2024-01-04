@@ -110,13 +110,14 @@ Contact US | REAL FURNITURE
                                 {% comment %} <input type="tel" name="phone_no" class="form-control" id="cphone" placeholder="Phone"> {% endcomment %}
                                 {{form.phone_no}}
                             </div><!-- End .col-sm-6 -->
-
+                           
                             <div class="col-sm-6">
                                 <label for="csubject" class="sr-only">Subject</label>
                                 {% comment %} <input type="text" name="subject" class="form-control" id="csubject" placeholder="Subject"> {% endcomment %}
                                 {{form.subject}}
                             </div><!-- End .col-sm-6 -->
                         </div><!-- End .row -->
+                        {{form.file}}
 
                         <label for="cmessage" class="sr-only">Message</label>
                         {% comment %} <textarea class="form-control" name="message" cols="30" rows="4" id="cmessage" required placeholder="Message *"></textarea> {% endcomment %}

@@ -5,7 +5,6 @@ from django.db import models
 from django.utils.safestring import mark_safe
 
 
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(blank=True, max_length=20)
@@ -13,6 +12,7 @@ class UserProfile(models.Model):
     city = models.CharField(blank=True, max_length=20)
     country = models.CharField(blank=True, max_length=50)
     image = models.ImageField(blank=True, upload_to='images/users/')
+
 
 
     def __str__(self):
