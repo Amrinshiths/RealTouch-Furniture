@@ -1,2 +1,8 @@
+# Ignore environment files
+.env
+
+# Ignore database files
+db.sqlite3
+
+
 shop/
-.env/
