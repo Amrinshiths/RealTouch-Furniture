@@ -1,0 +1,23 @@
+version: '3.9'
+
+
+services:
+
+  django:
+    image: realtouch
+    build: .
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=root
+      - POSTGRES_DB=realtouch
