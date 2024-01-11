@@ -16,9 +16,9 @@
             <div class="header-right">
                 <div class="social-icons social-icons-color">
                     <a href="https://www.facebook.com/profile.php?id=100088497903298" class="social-icon social-facebook" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
-                    <a href="#" class="social-icon social-twitter" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+                    <a href="https://twitter.com/OfficeFurn94917" class="social-icon social-twitter" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
                     <a href="https://www.instagram.com/realtouchofficefurniture23/?next=%2F" class="social-icon social-instagram" title="Pinterest" target="_blank"><i class="icon-instagram"></i></a>
-                    <a href="#" class="social-icon social-pinterest" title="Instagram" target="_blank"><i class="icon-pinterest-p"></i></a>
+                    <a href="https://www.pinterest.com/realtouchfurniture/" class="social-icon social-pinterest" title="Instagram" target="_blank"><i class="icon-pinterest-p"></i></a>
                 </div><!-- End .soial-icons -->
                 <ul class="top-menu top-link-menu">
                     <li>
@@ -93,7 +93,7 @@
                                         <div class="menu-col">
                                             <div class="row">
                                                 {% for category in categories %}
-                                                <div class="col-md-3">
+                                                <div class="col-md-5">
                                                     
                                                     <div class="title" style="color: #1cc0a0;font-family: 'Montserrat';font-size: 36px;line-height: 44px;">{{ category.name }}</div><!-- End .menu-title -->
                                                     <ul>
@@ -152,7 +152,7 @@
             </div><!-- End .header-left -->
 
             <div class="header-right">
-                <a href="wishlist.html" class="wishlist-link">
+                <a href="{% url 'wishlist' %}" class="wishlist-link">
                     <i class="icon-heart-o"></i>
                     <span class="wishlist-count">3</span>
                     <span class="wishlist-txt">My Wishlist</span>

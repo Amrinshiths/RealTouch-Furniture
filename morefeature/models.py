@@ -103,3 +103,24 @@ class customize(models.Model):
     def __str__(self):
         return self.name
 
+class Subscription(models.Model):
+    email = models.EmailField(blank=True,max_length=50 )
+    created_date    =   models.DateTimeField(auto_now_add=True)
+    modified_date   =   models.DateTimeField(auto_now=True)  
+
+    def __str__(self):
+        return self.email
+
+class SubscribeForm(ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['email']
+        widgets={
+        #     'name':TextInput(attrs={'class':"form-control", 'id':"cname", 'placeholder':"Name *", }),
+            'email':TextInput(attrs={'type':'email', 'class':'form-control form-control-white' ,'placeholder':'Enter your Email Address', 'aria-label':'Email Adress'  }),
+        #     'phone_no':TextInput(attrs={'name':"phone_no", 'class':"form-control" ,'id':"cphone", 'placeholder':"Phone"}),
+        #     'subject':TextInput(attrs={ 'name':"subject", 'class':"form-control", 'id':"csubject" ,'placeholder':"Subject"}),
+        #     'file' : ClearableFileInput(attrs={ 'name':"files", 'class':"form-control", 'id':"cfiles" }),
+        #     'message':Textarea(attrs={'class':"form-control", 'name':"message" ,'cols':"30" ,'rows':"4", 'id':"cmessage"  ,'placeholder':"Message *"}),
+
+        }

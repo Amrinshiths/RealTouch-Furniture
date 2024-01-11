@@ -8,32 +8,16 @@ from django.core.paginator import Paginator
 
 # Create your views here.
 def Product_List(request):
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('-id')
     paginated = Paginator(products, 8)
     page_number = request.GET.get('page') #Get the requested page number from the URL
     
     product = paginated.get_page(page_number)
     context ={
-        'product':product
+        'product':product,
     }
     return render (request,'User-Template/products/product-list.html',context)
 
-
-# def Product_detail(request,id,):
-#     product = Product.objects.filter(pk=id).first()
-#     if product : 
-#         images = Images.objects.filter(product_id=id)
-#         comments = Comment.objects.filter(product_id=id,status='True')
-
-        
-
-#         context ={
-#             'product':product,
-#             'images' : images,
-#             'comments': comments,
-#         }
-       
-#     return render (request,'User-Template/products/product_detailed.html',context)
 
 
 def Product_detail(request,id,slug):
@@ -81,3 +65,10 @@ def AjaxMatrial(request):
 
 
 
+def Wishlists(request):
+    wishlist = Wishlist.objects.all()
+    context ={
+        wishlist : 'wishlist'
+    }
+    return render(request,'User-Template\products\wishlist.html',context )
+    

@@ -8,9 +8,11 @@
                     <p class="cta-desc text-white">and receive <span class="font-weight-normal">$20 coupon</span> for first shopping</p><!-- End .cta-desc -->
                 </div><!-- End .text-center -->
             
-                <form action="#">
+                <form action="" method="post">
+                    {% csrf_token %}
                     <div class="input-group input-group-round">
-                        <input type="email" class="form-control form-control-white" placeholder="Enter your Email Address" aria-label="Email Adress" required>
+                        {% comment %} <input type="email" class="form-control form-control-white" placeholder="Enter your Email Address" aria-label="Email Adress" required> {% endcomment %}
+                        {{form.email}}
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="submit"><span>Subscribe</span><i class="icon-long-arrow-right"></i></button>
                         </div><!-- .End .input-group-append -->

@@ -63,7 +63,7 @@ def signup_form(request):
     context = {#'category': category,
                'form': form,
                }
-    return render(request, 'signup_form.html', context)
+    return render(request, 'User-Template/accounts/signup_form.html', context)
 
 
 @login_required(login_url='/login') # Check login

@@ -71,24 +71,10 @@ Contact US | REAL FURNITURE
                 <div class="col-lg-6">
                     <h2 class="title mb-1">How can we help ?</h2><!-- End .title mb-2 -->
                     <p class="mb-2">Please write your phone number as well at the end of your message and we will call you back with the information you need..</p>
-                    {% if messages %}
-                    {% for message in messages %}
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>RealTouchOffice!</strong>  {{ message }}.
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                    {% endfor %}
-                 {% endif %}
+                    {% include "User-Template/includes/messages.html" %}
 
                     <form action="" method="post"   class="contact-form mb-3">
                         {% csrf_token %}
-                        
-                        
-                        
-                        
-                       
                 
                         <div class="row">
                             <div class="col-sm-6">

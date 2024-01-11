@@ -33,3 +33,7 @@ class customizeAdmin(admin.ModelAdmin):
         readonly_fields=('name',)
                
 admin.site.register(customize,customizeAdmin)
+class SubscribAdmin(admin.ModelAdmin):
+        list_display = ['email' ]
+        readonly_fields=('email',)
+admin.site.register(Subscription,SubscribAdmin)
